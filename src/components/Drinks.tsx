@@ -6,7 +6,7 @@ import { DrinksItem } from '@/constant/Drink'
 
 export default function Drink() {
   return (
-    <section className="w-full mx-auto mt-[80px] sm:mt-[120px] px-4">
+    <section className="w-full mx-auto mt-[50px] px-4">
       <div className="container mx-auto py-10 sm:py-16 flex flex-col md:flex-row gap-8 md:gap-[112px]">
         
         {/* Drink Menu Section */}

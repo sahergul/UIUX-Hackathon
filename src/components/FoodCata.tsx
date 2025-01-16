@@ -1,5 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
+import { Great_Vibes } from "next/font/google";
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400"
+});
 
 const items = [
   { id: 1, Image: "/f1.png", label: "Save 50% on Fast Food" },
@@ -12,7 +18,7 @@ const FoodCatagory = () => {
   return (
     <section className="bg-black text-white py-16 px-20">
       <div className="container mx-auto text-center">
-      <h2 className="text-[#FF9F0D] text-[20px] md:text-[28px] lg:text-[32px] font-greatVibes italic whitespace-nowrap text-center">
+      <h2 className={`${greatVibes.className} whitespace-nowrap text-[#FF9F0D] text-[20px] md:text-[28px] lg:text-[32px] text-center`}>
       Food Catagory</h2>
         {/* Title */}
         <h2 className="text-3xl md:text-4xl font-bold mb-12">

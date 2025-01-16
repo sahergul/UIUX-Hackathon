@@ -1,14 +1,19 @@
 import React from "react";
 import Image from "next/image";
 import { LuThumbsUp, LuMessageSquareMore, LuShare2 } from "react-icons/lu";
+import { Great_Vibes } from "next/font/google";
 
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400"
+});
 
     const BlogPost: React.FC = () => {
     return (
     <>
-      <section className="text-white body-font bg-black">
+      <section className="text-white body-font bg-black max-w-screen-2xl mx-auto">
       <div className="flex flex-col justify-center items-center">
-      <h2 className="font-greatVibes text-4xl md:text-[32px] text-[24px] text-[#FF9F0D]">
+      <h2 className={`${greatVibes.className} text-4xl md:text-[32px] text-[24px] text-[#FF9F0D]`}>
       Blog Post
         </h2>
         <h1 className="text-[20px] md:text-[50px] font-bold whitespace-nowrap md:whitespace-normal">

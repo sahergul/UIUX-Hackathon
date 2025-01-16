@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Experience() {
   return (
-    <section className="relative py-10 sm:py-16 lg:py-20 bg-cover bg-center bg-[url('/menu.png')]">
+    <section className="relative py-8 lg:py-10 bg-cover bg-center bg-[url('/menu.png')]">
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-85"></div>
 

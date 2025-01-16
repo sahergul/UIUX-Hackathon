@@ -22,7 +22,7 @@ const Footer = () => {
           <h2 className="text-[20px] md:text-[32px] font-semibold">
             <span className="text-[#FF9F0D]">St</span>ill Need Our Support
           </h2>
-          <p className="text-[10px] md:text-[16px] font-normal mt-[17px]">
+          <p className="text-[10px] md:text-[16px] font-normal">
             Don&#39;t wait make a smart & logical quote here. Its pretty easy.
           </p>
         </div>
@@ -67,12 +67,12 @@ const Footer = () => {
           <div className="text-center">
             <h2 className="mb-6 text-[24px] font-semibold uppercase">Useful Links</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
-              <li className="mb-4"><a href="#" className="hover:underline">About</a></li>
+              <li className="mb-4"><a href="./about" className="hover:underline">About</a></li>
               <li className="mb-4"><a href="#" className="hover:underline">News</a></li>
               <li className="mb-4"><a href="#" className="hover:underline">Partner</a></li>
               <li className="mb-4"><a href="#" className="hover:underline">Team</a></li>
-              <li className="mb-4"><a href="#" className="hover:underline">Menu</a></li>
-              <li className="mb-4"><a href="#" className="hover:underline">Contact</a></li>
+              <li className="mb-4"><a href="./menu" className="hover:underline">Menu</a></li>
+              <li className="mb-4"><a href="./contact" className="hover:underline">Contact</a></li>
             </ul>
           </div>
 

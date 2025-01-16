@@ -12,7 +12,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-black text-white shadow-md">
+    <nav className="bg-black text-white shadow-md sticky top-0">
       <div className="container mx-auto px-6 lg:px-12 py-4 flex justify-between items-center">
         {/* Logo */}
         <h1 className="text-2xl font-bold">Food<span className="text-[#FF9F0D]">tuck</span>
@@ -27,7 +27,7 @@ export default function Navbar() {
             <li><Link href="./menu" className="hover:text-[#FF9F0D] transition">Menu</Link></li>
             <li><Link href="./blog" className="hover:text-[#FF9F0D] transition">Blog</Link></li>
             <li><Link href="./pages" className="hover:text-[#FF9F0D] transition">Pages</Link></li>
-            <li><Link href="./about" className="hover:text-[#FF9F0D] transition">About</Link></li>
+            <li><Link href="../otherPages/about" className="hover:text-[#FF9F0D] transition">About</Link></li>
             <li><Link href="./shop" className="hover:text-[#FF9F0D] transition">Shop</Link></li>
             <li><Link href="./contact" className="hover:text-[#FF9F0D] transition">Contact</Link></li>
             </ul>

@@ -1,23 +1,29 @@
 import React from "react";
 import Image from "next/image";
 import { FaCheck } from "react-icons/fa6";
+import { Great_Vibes } from "next/font/google";
+import Link from "next/link";
 
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400"
+});
 
 function AboutUs() {
   return (
-    <section className="bg-black px-3 md:px-[40px] lg:px-[100px] py-[50px]">
+    <section className="bg-black px-3 md:px-[40px] lg:px-[80px] py-40px]">
       {/* Heading and Images Section */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-evenly">
 
         {/* Text Section */}
-        <div className="text-white w-auto lg:w-[50%] mb-8 lg:mb-0">
-          <h1 className="font-greatVibes text-4xl md:text-[32px] lg:text-[40px] text-[#FF9F0D]">
+        <div className="text-white md:w-[40%] mb-8 lg:mb-0">
+          <h1 className={`${greatVibes.className} md:text-[32px] lg:text-[40px] text-[#FF9F0D]`}>
             About us
           </h1>
-          <h1 className="w-[500px] text-[20px] md:text-[30px] lg:text-[48px] font-bold md:whitespace-normal">
+          <h1 className=" text-[20px] md:text-[30px] lg:text-[40px] font-bold md:whitespace-normal">
             <span className="text-[#FF9F0D]">We</span> Create the best foody product
           </h1>
-          <p className="text-[12px] md:text-[16px] lg:text-[18px] font-normal mt-4 text-justify">
+          <p className="text-[12px] md:text-[16px] lg:text-[18px] font-normal mt-4 text-justify w-full">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.
           </p>
 
@@ -34,16 +40,16 @@ function AboutUs() {
           </ul>
 
           <div className="flex flex-col md:flex-row items-center md:items-start">
-            <button className="bg-[#FF9F0D] text-white w-[100px] h-[30px] md:w-[190px] md:h-[60px] rounded-[40px] mt-[32px] hover:bg-yellow-800">
+            <Link href="./about"><button className="bg-[#FF9F0D] text-white w-[100px] h-[30px] md:w-[190px] md:h-[60px] rounded-[40px] mt-[32px] hover:bg-yellow-800">
               See More
-            </button>
+            </button></Link>
           </div>
         </div>
 
         {/* Image Section */}
-        <div className="flex flex-col  lg:w-[50%] justify-center items-center mt-10">
+        <div className="flex flex-col  lg:w-[40%] justify-center items-center mt-10">
           {/* First Image (Responsive) */}
-          <div className="relative w-full sm:w-[320px] md:w-[450px] lg:w-[660px]  h-[300px] mb-2 lg:mb-0">
+          <div className="relative w-full sm:w-[320px] md:w-[400px] lg:w-[550px]  h-[250px] mb-2 lg:mb-0">
             <Image
               src="/About1.png"
               alt="About Image 1"

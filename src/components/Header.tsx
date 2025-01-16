@@ -1,26 +1,32 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-
-export default function Header(props:{heading: string; subheading: string}) {
-    const { heading, subheading } = props;  // Destructuring the props
-        return(
-        <>
-        {/* // Main div  */}
-        <div className='relative w-[1920px] text bg-white' >
-
-            {/* 2nd div bg-Image */}
-            <div className='w-[1920px]  text-center'>
-                <Image 
-                src="/upper.png"
-                alt='image'
-                width={1920}
-                height={410}
-                />
-                <div className='w-full text-white absolute text-center top-40 left-0 items-center'>
-                    <h1 className='text-5xl font-bold'>{heading}</h1>
-                    <h5 className='py-3'>Home  &gt;<span className='text-[#FF9F0D]'> {subheading}</span></h5>
-                </div>
-                </div>
-                </div>
-                </>
-)}
+export default function Header(props: { heading: string; subheading: string }) {
+  const { heading, subheading } = props; // Destructuring the props
+  return (
+    <>
+      {/* Main Div */}
+      <div className="relative bg-white">
+        {/* Background Image Section */}
+        <div className="relative max-w-screen-2xl mx-auto">
+          <Image
+            src="/upper.png"
+            alt="Header Background"
+            width={1920}
+            height={410}
+            className="w-full object-cover h-[200px] md:h-[300px] lg:h-[400px]"
+          />
+          {/* Text Overlay */}
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
+              {heading}
+            </h1>
+            <h5 className="py-2 md:py-3 text-sm md:text-base lg:text-lg">
+              Home &gt;
+              <span className="text-[#FF9F0D]"> {subheading}</span>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}

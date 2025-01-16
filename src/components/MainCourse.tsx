@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function MainCourse() {
   return (
-    <section className="w-full mx-auto mt-[120px] px-4 sm:px-6 lg:px-8">
+    <section className="w-full mx-auto mt-[30px] px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto py-16 flex flex-col lg:flex-row gap-12">
         {/* Menu Content */}
         <div className="w-full lg:w-1/2 lg:pl-8">

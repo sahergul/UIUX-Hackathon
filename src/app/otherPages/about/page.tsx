@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import Header from "@/components/Header";
 import { IoPlayOutline } from "react-icons/io5";
 import Testimonial from "@/components/Testimonial";

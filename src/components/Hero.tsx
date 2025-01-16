@@ -1,7 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import { FaPinterest } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { PiLineVerticalLight } from "react-icons/pi";
 import { Great_Vibes } from "next/font/google";
-
 
 const greatVibes = Great_Vibes({
   subsets: ["latin"],
@@ -12,7 +15,14 @@ const greatVibes = Great_Vibes({
 export default function Hero () {
   return (
     <section className="bg-black px-3 md:px-[80px] lg:px-[135px] flex flex-col justify-evenly md:flex-row md:items-center py-[50px]">
-      {/* Heading */}
+     <div className="flex-col justify-evenly text-white space-y-5">
+        <PiLineVerticalLight className="text-8xl" />
+        <FaFacebookF className="ml-10" />
+           <FaTwitter className="ml-10 text-[#FF9F0D]"/>
+           <FaPinterest className="ml-10"/>
+           <PiLineVerticalLight className="text-8xl" />
+        </div>
+         {/* Heading */}
       <div className="text-white w-full md:w-[50%]">
         <h2 className={`${greatVibes.className} text-[#FF9F0D] text-[20px] md:text-[28px] lg:text-[32px]  whitespace-nowrap text-center md:text-left`}>
           Its Quick & Amusing!

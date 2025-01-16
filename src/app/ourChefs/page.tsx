@@ -1,7 +1,12 @@
 import Image from "next/image"
 import React from 'react'
-import Hero from "./hero"
-import ChefGrid from "./chefgrid"
+import { Great_Vibes } from "next/font/google";
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400"
+});
+
 
 
 const OurChefs = () => {
@@ -10,7 +15,7 @@ const OurChefs = () => {
        <section className="bg-black md:px-[135px] py-[50px]">
 
         <div className="flex flex-col justify-center items-center">
-      <h1 className="font-greatVibes text-4xl md:text-[32px] text-[24px] text-[#FF9F0D]">
+      <h1 className={`${greatVibes.className} whitespace-nowrap md:text-4xl text-[#FF9F0D]`}>
       Chefs
         </h1>
         <h1 className="text-[20px] text-white md:text-[50px] font-bold whitespace-nowrap md:whitespace-normal">

@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import { Great_Vibes } from "next/font/google";
+
 
 const config: Config = {
     darkMode: ["class"],
