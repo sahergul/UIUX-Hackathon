@@ -16,8 +16,8 @@ import {
 export default function BlogPage() {
     return (
         <>
-            <Header heading="Home" subheading="Blog" />
-            <div className="container mx-auto px-4 py-2 md:py-20 flex flex-wrap lg:flex-nowrap">
+            <Header heading="Blog List" subheading="Blog"/>
+            <div className="container max-w-screen-2xl mx-auto px-4 py-2 md:py-10 flex flex-wrap lg:flex-nowrap">
                 {/* Left Content */}
                 <div className="w-full lg:w-2/3 lg:mr-10">
                     <Link href="blog/BlogDetail">

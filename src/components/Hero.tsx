@@ -6,7 +6,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { PiLineVerticalLight } from "react-icons/pi";
 import { Great_Vibes } from "next/font/google";
-import { Button } from "./ui/button";
+
 
 const greatVibes = Great_Vibes({
   subsets: ["latin"],
@@ -39,9 +39,10 @@ export default function Hero () {
         </p>
 
         <div className="flex flex-col md:flex-row items-center justify-center md:justify-start mt-6">
+<Link href="./shop">
           <button className="bg-[#FF9F0D] text-white w-[100px] h-[30px] md:w-[160px] md:h-[50px] lg:w-[190px] lg:h-[60px] rounded-[40px] hover:bg-yellow-800">
             See More
-          </button>
+          </button></Link>
         </div>
       </div>
 

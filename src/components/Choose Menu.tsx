@@ -39,7 +39,7 @@ const ChooseFromMenu = () => {
           <p className={`${VibeFont.className} text-[#FF9F0D] text-3xl md:text-4xl mb-2 animate-fade-in`}>
             Choose & pick
           </p>
-          <h2 className="text-white text-3xl md:text-5xl font-bold">
+          <h2 className="text-white text-3xl md:text-4xl font-bold">
             <span className="text-[#FF9F0D]">Fr</span>om Our Menu
           </h2>
         </div>

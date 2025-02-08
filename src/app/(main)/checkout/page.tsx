@@ -1,12 +1,23 @@
 "use client";
-
-import { useState, useEffect } from "react";
-import { client } from "@/sanity/lib/client"; // Adjust the path to sanity.js file
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
+import { CartItem } from "@/redux/types";
 import Header from "@/components/Header";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
+
 
 const CheckoutPage = () => {
+  // Fetch cart data from Redux
+  const cartItems: CartItem[] = useSelector((state: RootState) => state.cart.items);
+
+  console.log("Cart Data in Checkout Page:", cartItems); // Debugging
+
+  // Calculate subtotal
+  const subTotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const coupon = useSelector((state: RootState) => state.cart.coupon);
+  const discount = coupon ? subTotal * 0.1 : 0;
+  const totalPrice = subTotal - discount;
+
   const [shippingAddress, setShippingAddress] = useState({
     firstName: "",
     lastName: "",
@@ -24,26 +35,6 @@ const CheckoutPage = () => {
     sameAsShipping: false,
   });
 
-  interface CartItem {
-    name: string;
-    price: number;
-    quantity: number;
-    image: string;
-  }
-
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const router = useRouter();
-
-  useEffect(() => {
-    // Fetch cart items from local storage (or state management if used)
-    const storedCart = localStorage.getItem("cartItems");
-    if (storedCart) {
-      setCartItems(JSON.parse(storedCart));
-    }
-    setLoading(false);
-  }, []);
-
   const handleShippingChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setShippingAddress((prev) => ({ ...prev, [name]: value }));
@@ -58,33 +49,9 @@ const CheckoutPage = () => {
 
     const finalBillingAddress = billingAddress.sameAsShipping ? shippingAddress : billingAddress;
 
-    const order = {
-      _type: "order",
-      shippingAddress,
-      billingAddress: finalBillingAddress,
-      items: cartItems,
-      total: cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0),
-      status: "pending",
-    };
-
-    try {
-      await client.create(order);
-      alert("Order placed successfully!");
-      localStorage.removeItem("cartItems"); // Clear cart after successful order
-      router.push("/thank-you");
-    } catch (error) {
-      console.error("Error submitting order:", error);
-      alert("Failed to place order. Please try again.");
-    }
-  };
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
   return (
-    <>
-      <Header heading="Checkout" subheading="Checkout" />
+    <div className="container mx-auto">
+      <Header heading="Checkout Page" subheading="CheckOut"/>
       <div className="container max-w-screen-lg mx-auto p-6 flex flex-col md:flex-row justify-between">
         <section>
           <form onSubmit={handleSubmit} className="mb-8">
@@ -111,36 +78,29 @@ const CheckoutPage = () => {
           </div>
         </section>
 
-        <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4">Order Summary</h3>
-          <ul className="space-y-2">
-            {cartItems.length > 0 ? (
-              cartItems.map((item, index) => (
-                <li key={index} className="flex items-center space-x-4">
-                  <Image src={item.image} alt={item.name} width={50} height={50} className="rounded" />
-                  <div>
-                    <p>{item.name}</p>
-                    <p>${item.price} (Quantity: {item.quantity})</p>
-                  </div>
-                </li>
-              ))
-            ) : (
-              <p>Your cart is empty.</p>
-            )}
-          </ul>
-          {cartItems.length > 0 && (
-            <div className="mt-4">
-              <p>Sub-total: ${cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2)}</p>
-              <p>Shipping: Free</p>
-              <p>Discount: 25%</p>
-              <p>Tax: ${(cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0) * 0.25).toFixed(2)}</p>
-              <p className="font-bold">Total: ${(cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0) * 1.25).toFixed(2)}</p>
+      {cartItems.length === 0 ? (
+        <p className="text-gray-600">Your cart is empty.</p>
+      ) : (
+        <div className="space-y-4">
+          {cartItems.map((item) => (
+            <div key={item.id} className="flex items-center justify-between p-4 border rounded-lg shadow-sm">
+              <div className="flex items-center space-x-4">
+                <img src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded" />
+                <h4 className="text-lg font-semibold">{item.name}</h4>
+              </div>
+              <p className="text-gray-600">Total: ${item.price * item.quantity}</p>
             </div>
-          )}
+          ))}
+          <div className="mt-6 p-4 border focus:outline-none w-70">
+            <h1 className="text-lg font-bold">Total Bill</h1>
+            <p>Cart Subtotal: ${subTotal.toFixed(2)}</p>
+            <p>Discount: ${discount.toFixed(2)}</p>
+            <p className="border-t-4"><strong>Total Amount: ${totalPrice.toFixed(2)}</strong></p>
+          </div>
         </div>
-      </div>
-    </>
-  );
+      )}
+    </div>
+    </div>);
 };
-
+}
 export default CheckoutPage;

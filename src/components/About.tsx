@@ -53,7 +53,7 @@ function AboutUs() {
             <Image
               src="/About1.png"
               alt="About Image 1"
-              className="object-cover w-[320px] h-auto rounded-[6px_0px_0px_0px] opacity-100"
+              className="object-cover rounded-[6px_0px_0px_0px] opacity-100"
               width={660}
               height={330}
             />

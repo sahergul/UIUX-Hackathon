@@ -13,7 +13,7 @@ export default function Header(props: { heading: string; subheading: string }) {
             src="/upper.png"
             alt="Header Background"
             width={1920}
-            height={410}
+            height={310}
             className="w-full object-cover h-[200px] md:h-[300px]"
           />
           {/* Text Overlay */}

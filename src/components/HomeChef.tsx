@@ -48,7 +48,7 @@ const OurChefs = () => {
           <h1 className={`${greatVibes.className} whitespace-nowrap md:text-4xl text-[#FF9F0D]`}>
             Chefs
           </h1>
-          <h1 className="text-[20px] text-white md:text-[50px] font-bold whitespace-nowrap md:whitespace-normal">
+          <h1 className="text-[20px] text-white md:text-[40px] font-bold whitespace-nowrap md:whitespace-normal">
             <span className="text-[#FF9F0D]">Me</span>et Our Chef
           </h1>
         </div>

@@ -1,4 +1,5 @@
 "use client";
+import Header from "@/components/Header";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link"; // Import Link from Next.js
@@ -108,7 +109,10 @@ const Shop = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-2 md:pt-16 flex flex-wrap lg:flex-nowrap">
+    <>
+    {/* First Section: Image and Breadcrumb */}
+    <Header heading="Our Shop" subheading="Shop" />
+    <div className="container mx-auto px-4 py-2 md:pt-5 flex flex-wrap lg:flex-nowrap">
       {/* Left Content */}
       <div className="w-full lg:w-2/3 lg:mr-10">
         {/* Sort and Show Options */}
@@ -215,6 +219,7 @@ const Shop = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

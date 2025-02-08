@@ -17,7 +17,7 @@ const greatVibes = Great_Vibes({
       <h2 className={`${greatVibes.className} text-4xl md:text-[32px] text-[24px] text-[#FF9F0D]`}>
       Blog Post
         </h2>
-        <h1 className="text-[20px] md:text-[50px] font-bold whitespace-nowrap md:whitespace-normal">
+        <h1 className="text-[20px] md:text-[40px] font-bold whitespace-nowrap md:whitespace-normal">
           <span className="text-[#FF9F0D]">La</span>test News & Blog
         </h1>
         </div>

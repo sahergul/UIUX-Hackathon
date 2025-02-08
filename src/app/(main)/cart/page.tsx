@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addToCart, removeFromCart, updateQuantity, applyCoupon, CartState } from "@/redux/cartSlice";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Header from "@/components/Header";
 import { RootState } from "@/redux/store";
 import { CartItem } from "@/redux/types";
 
@@ -50,8 +51,8 @@ const ShoppingCart = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4">Shopping Cart</h2>
+    <div className="container mx-auto">
+      <Header heading="Shopping Cart" subheading="Cart"/>
       {(cartItems ?? []).length === 0 ? (
         <p className="text-gray-600">Your cart is empty.</p>
       ) : (
@@ -97,7 +98,7 @@ const ShoppingCart = () => {
         <Link href="./shop">
           <button className="w-30 mt-4 px-4 py-2 bg-gray-500 text-white rounded">Continue shopping</button>
         </Link>
-        <button onClick={handleCheckout} className="w-30 mt-4 px-4 py-2 bg-orange-500 text-white rounded">Proceed to Checkout</button>
+        <button onClick={handleCheckout} className="w-30 mt-4 px-4 py-2 mb-3 bg-orange-500 text-white rounded">Proceed to Checkout</button>
       </div>
     </div>
   );
