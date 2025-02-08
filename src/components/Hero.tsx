@@ -1,10 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaPinterest } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { PiLineVerticalLight } from "react-icons/pi";
 import { Great_Vibes } from "next/font/google";
+import { Button } from "./ui/button";
 
 const greatVibes = Great_Vibes({
   subsets: ["latin"],
@@ -53,7 +55,7 @@ export default function Hero () {
           className="w-[90%] md:w-auto max-w-[300px] md:max-w-full"
         />
       </div>
-    </section>
+  </section>
   );
 }
 

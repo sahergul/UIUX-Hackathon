@@ -1,5 +1,6 @@
 import Image from "next/image";
-
+import Navbar from "./Navbar";
+<Navbar/>
 export default function Header(props: { heading: string; subheading: string }) {
   const { heading, subheading } = props; // Destructuring the props
   return (
@@ -13,11 +14,11 @@ export default function Header(props: { heading: string; subheading: string }) {
             alt="Header Background"
             width={1920}
             height={410}
-            className="w-full object-cover h-[200px] md:h-[300px] lg:h-[400px]"
+            className="w-full object-cover h-[200px] md:h-[300px]"
           />
           {/* Text Overlay */}
           <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
+            <h1 className="text-xl md:text-4xl font-bold">
               {heading}
             </h1>
             <h5 className="py-2 md:py-3 text-sm md:text-base lg:text-lg">

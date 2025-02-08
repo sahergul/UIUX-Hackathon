@@ -8,7 +8,7 @@ const greatVibes = Great_Vibes({
 });
 
 const items = [
-  { id: 1, Image: "/f1.png", label: "Save 50% on Fast Food" },
+  { id: 1, Image: "/f1.png", label: "Save 50%" },
   { id: 2, Image: "/burger3.png", label: "Delicious Burgers" },
   { id: 3, Image: "/f3.png", label: "Healthy Salads" },
   { id: 4, Image: "/f4.png", label: "Desserts" },
@@ -42,7 +42,6 @@ const FoodCatagory = () => {
                   src={item.Image} // Correct path to images
                   alt={item.label}
                   className="object-cover rounded-lg"
-                  layout="responsive"  // Ensures it maintains aspect ratio
                   width={500} // Adjust width for responsiveness
                   height={300} // Adjust height for responsiveness
                 />

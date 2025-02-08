@@ -54,7 +54,6 @@ function AboutUs() {
               src="/About1.png"
               alt="About Image 1"
               className="object-cover w-[320px] h-auto rounded-[6px_0px_0px_0px] opacity-100"
-              layout="responsive"
               width={660}
               height={330}
             />
@@ -67,7 +66,6 @@ function AboutUs() {
                 src="/About2.png"
                 alt="About Image 2"
                 className="object-cover rounded-[6px_0px_0px_0px] opacity-100"
-                layout="responsive"
                 width={322}
                 height={194}
               />
@@ -75,9 +73,8 @@ function AboutUs() {
             <div className="relative w-full sm:w-[300px] md:w-[322px] lg:w-[322px] xl:w-[350px] h-[auto]">
               <Image
                 src="/About3.png"
-                alt="About Image 3"
+                alt="About Image"
                 className="object-cover rounded-[6px_0px_0px_0px] opacity-100"
-                layout="responsive"
                 width={322}
                 height={194}
               />

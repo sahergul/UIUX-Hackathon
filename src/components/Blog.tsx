@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { LuThumbsUp, LuMessageSquareMore, LuShare2 } from "react-icons/lu";
 import { Great_Vibes } from "next/font/google";
@@ -76,7 +77,8 @@ const greatVibes = Great_Vibes({
           </div>
         </div>
       </section>
-      </>    );
+      </>    
+      );
   }
 
   export default BlogPost;

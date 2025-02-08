@@ -1,37 +1,25 @@
-"use client"
-import React, { useState } from 'react';
-import { IoSearch } from 'react-icons/io5';
+// components/SearchBar.tsx
+import React from "react";
+import { IoSearch } from "react-icons/io5"; // Import the search icon
 
-const SearchBar = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const items = ['Drinks', 'Dessert', 'MainCourse', 'starterMenu']; // Example data
+interface SearchBarProps {
+  onSearch: (query: string) => void;
+}
 
-  const handleInputChange = (event:any) => {
-    setSearchQuery(event.target.value);
-  };
-
-  const handleSearch = () => {
-    const filteredItems = items.filter((item) =>
-      item.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    console.log('Filtered Items:', filteredItems);
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    onSearch(event.target.value);
   };
 
   return (
-    <div className="flex items-center bg-gray-800 px-3 py-2 rounded-full">
+    <div className="relative">
       <input
         type="text"
         placeholder="Search..."
-        className="bg-transparent text-white placeholder-gray-400 focus:outline-none text-sm w-50"
-        value={searchQuery}
         onChange={handleInputChange}
-        onKeyPress={(event) => {
-          if (event.key === 'Enter') {
-            handleSearch();
-          }
-        }}
+        className="w-full p-2 pl-10 border rounded-full bg-black focus:outline-none border-orange-400 text-white"
       />
-      <IoSearch className="text-[#FF9F0D] ml-2 cursor-pointer" onClick={handleSearch} />
+      <IoSearch className="absolute left-3 top-3 text-white" />
     </div>
   );
 };

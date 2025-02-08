@@ -1,9 +1,11 @@
 "use client"; // Mark this as a client component
 import ReduxProvider from '@/providers/redux-provider';
-import "./globals.css";
+import { metadata } from "../metadata"; // Import metadata from the same folderimport "../globals.css";
 import { Great_Vibes } from "next/font/google";
 import { Inter } from "next/font/google";
-import type { Metadata } from "next"; // Import metadata from the same folder
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
 
 const greatVibes = Great_Vibes({
   subsets: ["latin"],
@@ -20,12 +22,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
       <body className={`${inter.className} font-helvetica`}>
         {/* Wrap the entire app with the Redux Provider */}
         <ReduxProvider>
-              {children}
-           </ReduxProvider>
+          <div className="max-w-screen-2xl mx-auto">
+            <Navbar />
+            {children}
+          <Footer/>
+          </div>
+        </ReduxProvider>
       </body>
     </html>
   );
